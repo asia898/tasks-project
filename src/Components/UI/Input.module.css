@@ -1,0 +1,15 @@
+.formItem {
+    margin-bottom: 15px;
+}
+
+.inputItem{
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.labelItem{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
