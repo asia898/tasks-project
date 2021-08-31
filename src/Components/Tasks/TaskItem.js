@@ -3,9 +3,9 @@ import Stopper from "./TaskFeatures/Stopper";
 
 const TaskItem = props => {
     return (
-        <li>
-            <p>Category</p>
-            <p>Task Name</p>
+        <li key={props.key}>
+            <p>{props.taskName}</p>
+            <p>{props.taskCategory}</p>
             <Stopper></Stopper>
         </li>
     );
