@@ -1,19 +1,18 @@
 import React from "react";
-import Card from "../UI/Card";
 import TaskItem from "./TaskItem";
+import styles from "./TaskList.module.css";
 
 const TaskList = (props) => {
-
-    
-
   return (
-    <Card>
-      <ul>
-        {props.tasks.map((task) => (
-          <TaskItem key={task.id} taskName={task.name} taskCategory={task.category}></TaskItem>
-        ))}
-      </ul>
-    </Card>
+    <ul className={styles.listTask}>
+      {props.tasks.map((task) => (
+        <TaskItem
+          key={task.id}
+          taskName={task.name}
+          taskCategory={task.category}
+        ></TaskItem>
+      ))}
+    </ul>
   );
 };
 
