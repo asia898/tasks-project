@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react";
 import "./App.css";
 import NewTask from "./Components/Tasks/NewTask";
 import TaskList from "./Components/Tasks/TaskList";
+import styles from "./App.module.css";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <Fragment>
+      <h1 className={styles.mainHeader}>Keep track of you tasks!</h1>
       <NewTask onAddTask={addTaskHandler} />
       <TaskList tasks={taskList} />
     </Fragment>
