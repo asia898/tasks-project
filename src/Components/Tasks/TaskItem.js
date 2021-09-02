@@ -9,7 +9,7 @@ const TaskItem = props => {
         <Card>
             <li className={styles.listElement}>
                 <Button>x</Button>
-                <p>{props.taskName}</p>
+                <h2>{props.taskName}</h2>
                 <p>{props.taskCategory}</p>
                 <Stopper></Stopper>
             </li>
