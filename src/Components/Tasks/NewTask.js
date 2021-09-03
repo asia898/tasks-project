@@ -1,32 +1,25 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import Card from "../UI/Card";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 import styles from "./NewTask.module.css";
 
 const NewTask = (props) => {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredCategory, setEnteredCategory] = useState("");
+  const nameInputRef = useRef();
+  const categoryInputRef = useRef();
 
   const addTaskHandler = (event) => {
     event.preventDefault();
 
-    //Instead of printing the value to the console we will need to call a function to add it to the list
-    console.log(enteredName, enteredCategory);
-
-    setEnteredName("");
-    setEnteredCategory("");
+    const enteredName = nameInputRef.current.value;
+    const enteredCategory = categoryInputRef.current.value;
 
     props.onAddTask(enteredName, enteredCategory);
+
+    nameInputRef.current.value = '';
+    categoryInputRef.current.value = '';
   };
 
-  const taskNameChangeHandler = (event) => {
-    setEnteredName(event.target.value);
-  };
-
-  const categoryChangeHandler = (event) => {
-    setEnteredCategory(event.target.value);
-  };
 
   return (
     <Card className={styles.form}>
@@ -35,8 +28,7 @@ const NewTask = (props) => {
           id="task_name"
           type="text"
           name="task_name"
-          value={enteredName}
-          onChange={taskNameChangeHandler}
+          reference={nameInputRef}
         >
           Name:
         </Input>
@@ -44,8 +36,7 @@ const NewTask = (props) => {
           id="task_category"
           type="text"
           name="task_category"
-          value={enteredCategory}
-          onChange={categoryChangeHandler}
+          reference={categoryInputRef}
         >
           Category:
         </Input>
