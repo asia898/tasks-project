@@ -6,6 +6,22 @@
     display: block;
     padding: 8px;
     border-radius: 5px;
+    border: 2px solid #94849B;
+    background-color: #F5F4F6;
+}
+
+.inputItem:focus{
+    outline: none;
+    border-color: #27187E;
+    border-width: 3px;
+    background-color: #F0EEFC;
+}
+
+.inputItem.invalid {
+    border-color: #FF3864;
+    color: #FF3864;
+    background-color: #FFEBEF;
+
 }
 
 .labelItem{
@@ -13,3 +29,8 @@
     margin-bottom: 5px;
     font-weight: bolder;
 }
+
+.labelItem.invalid {
+    color: #FF3864;
+}
+

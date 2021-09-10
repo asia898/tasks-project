@@ -9,3 +9,13 @@
 
 
 }
+
+button:disabled,
+button:focus:disabled,
+button:hover:disabled,
+button:active:disabled{
+    background: #94849B;
+    border-color: #94849B;
+    color: white;
+    cursor: not-allowed;
+}

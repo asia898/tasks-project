@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Fragment>
-      <h1 className={styles.mainHeader}>Keep track of you tasks!</h1>
+      <h1 className={styles.mainHeader}>Keep track of your tasks!</h1>
       <NewTask onAddTask={addTaskHandler} />
       <TaskList tasks={taskList} />
     </Fragment>
